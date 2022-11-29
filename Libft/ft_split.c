@@ -6,13 +6,13 @@
 /*   By: mscheffe <mscheffe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 19:21:41 by mscheffe          #+#    #+#             */
-/*   Updated: 2022/11/25 23:04:11 by mscheffe         ###   ########.fr       */
+/*   Updated: 2022/11/26 19:43:09 by mscheffe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_wordcount(char const *s, char c)
+static int	ft_wordcount(const char *s, char c)
 {
 	int	i;
 	int	count;
@@ -24,53 +24,61 @@ static int	ft_wordcount(char const *s, char c)
 		while (s[i] == c && s[i])
 			i++;
 		if (s[i] == '\0')
-			return (count);
+			break ;
 		while (s[i] != c && s[i])
 			i++;
 		count++;
 	}
+	return (count);
 }
 
-static char	*ft_takeword(char const *s, char c)
+static char	*ft_takeword(const char *s, int *j, char c)
 {
 	int		i;
-	int		j;
 	char	*word;
 
+	while (s[*j] == c)
+		if (s[(*j)++] == '\0')
+			return (NULL);
 	i = 0;
-	j = 0;
-	while (s[j] != c)
-		j++;
-	word = (char *)malloc((j + 1)
-	if(word == NULL)
-		return (NULL);
-	while(i < j)
-	{
-		word[i] = s[i];
+	while (s[*j + i] != c && s[*j + i])
 		i++;
+	if (i != 0)
+	{
+		word = (char *)malloc(sizeof(char) * (i + 1));
+		if (word == NULL)
+			return (NULL);
+		i = 0;
+		while (s[*j] != c && s[*j])
+			word[i++] = s[(*j)++];
+		word[i] = '\0';
 	}
-	return (word); 
+	else
+		return (NULL);
+	return (word);
 }
 
-char	**ft_split(char	const *s, char c)
+char	**ft_split(const char *s, char c)
 {
-	size_t	i;
-	size_t	k;
-	char	*word
+	int		i;
+	int		k;
+	int		*j;
+	char	*word;
 	char	**list;
 
-	i = 0;
-	k = ft_wordcount(s, c);
-	list = (char **)malloc(sizeof(char *) * (k + 1));
+	list = (char **)malloc(sizeof(char *) * (ft_wordcount(s, c) + 1));
 	if (list == NULL)
 		return (NULL);
-	while (i < k)
+	i = 0;
+	j = &i;
+	k = 0;
+	while (k < ft_wordcount(s, c))
 	{
-		word = ft_takeword(s, c);
+		word = ft_takeword(s, j, c);
 		if (word == NULL)
 			break ;
-		list[i++] = word;	
+		list[k++] = word;
 	}
-	list[i] = NULL;
+	list[k] = NULL;
 	return (list);
 }

@@ -6,7 +6,7 @@
 /*   By: mscheffe <mscheffe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 14:34:03 by mscheffe          #+#    #+#             */
-/*   Updated: 2022/11/23 22:17:02 by mscheffe         ###   ########.fr       */
+/*   Updated: 2022/11/26 19:47:55 by mscheffe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*ft_itoa(int n)
 	char	*str;
 
 	len = ft_takenum(n);
-	str = (char *)malloc(len + 1);
+	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	if (str == NULL)

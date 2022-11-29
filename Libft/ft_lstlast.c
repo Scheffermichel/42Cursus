@@ -1,39 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mscheffe <mscheffe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 13:35:59 by mscheffe          #+#    #+#             */
-/*   Updated: 2022/11/26 19:50:03 by mscheffe         ###   ########.fr       */
+/*   Created: 2022/11/28 13:34:45 by mscheffe          #+#    #+#             */
+/*   Updated: 2022/11/29 13:09:22 by mscheffe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+t_list	*ft_lstlast(t_list *lst)
 {
-	unsigned int	j;
-	char			*sub;
+	t_list	*last;
 
-	j = 0;
-	if (s == NULL)
+	last = lst;
+	if (last == NULL)
 		return (NULL);
-	if (len > (ft_strlen(s)))
-		len = (ft_strlen(s));
-	sub = (char *)malloc(sizeof(char) * (len + 1));
-	if (sub == NULL)
-		return (NULL);
-	if ((unsigned int)(ft_strlen(s)) > start)
-	{	
-		while (s[start] && j < len)
-		{
-			sub[j] = s[start];
-			j++;
-			start++;
-		}
-	}	
-	sub[j] = '\0';
-	return (sub);
+	if (last->next == NULL)
+		return (last);
+	while (last != NULL)
+	{
+		if (last->next == NULL)
+			return (last);
+		last = last->next;
+	}
+	return (NULL);
 }

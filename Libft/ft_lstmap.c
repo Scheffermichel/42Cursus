@@ -1,39 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mscheffe <mscheffe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 13:35:59 by mscheffe          #+#    #+#             */
-/*   Updated: 2022/11/26 19:50:03 by mscheffe         ###   ########.fr       */
+/*   Created: 2022/11/29 13:58:09 by mscheffe          #+#    #+#             */
+/*   Updated: 2022/11/29 14:57:44 by mscheffe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	unsigned int	j;
-	char			*sub;
+	t_list	*node;
+	t_list	*newlst;
 
-	j = 0;
-	if (s == NULL)
+	if (del == NULL || lst == NULL || f == NULL)
 		return (NULL);
-	if (len > (ft_strlen(s)))
-		len = (ft_strlen(s));
-	sub = (char *)malloc(sizeof(char) * (len + 1));
-	if (sub == NULL)
-		return (NULL);
-	if ((unsigned int)(ft_strlen(s)) > start)
-	{	
-		while (s[start] && j < len)
+	newlst = ft_lstnew(f(lst->content));
+	node = newlst;
+	while (lst->next != NULL)
+	{
+		lst = lst->next;
+		node->next = ft_lstnew(f(lst->content));
+		node = node->next;
+		if (node == NULL)
 		{
-			sub[j] = s[start];
-			j++;
-			start++;
-		}
-	}	
-	sub[j] = '\0';
-	return (sub);
+			ft_lstclear(&newlst, del);
+			return (NULL);
+		}	
+	}
+	node->next = NULL;
+	return (newlst);
 }
