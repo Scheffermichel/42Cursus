@@ -37,4 +37,4 @@ norm:
 	norminette -R CheckForbiddenSourceHeader *.c
 	norminette -R CheckDefine *.h
 
-.PHONY: all re clean fclean bonus
+.PHONY: all re clean fclean bonus norm
