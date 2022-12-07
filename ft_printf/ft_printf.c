@@ -6,11 +6,10 @@
 /*   By: mscheffe <mscheffe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 14:06:26 by mscheffe          #+#    #+#             */
-/*   Updated: 2022/12/05 14:23:40 by mscheffe         ###   ########.fr       */
+/*   Updated: 2022/12/07 15:53:55 by mscheffe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_printf(const char *s, ...)
-{
-	
-}
+#include "ft_printf.h"
+
+

@@ -1,13 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mscheffe <mscheffe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/07 15:50:57 by mscheffe          #+#    #+#             */
-/*   Updated: 2022/12/07 15:51:34 by mscheffe         ###   ########.fr       */
+/*   Created: 2022/11/16 10:14:41 by mscheffe          #+#    #+#             */
+/*   Updated: 2022/11/23 22:21:17 by mscheffe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#	include "Libft/libft.h"
+#include "libft.h"
+
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+	unsigned int	i;
+
+	i = 0;
+	if (!s || !f)
+		return ;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
+}
