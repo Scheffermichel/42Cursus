@@ -1,4 +1,4 @@
-SRC = ft_printf
+SRC = ft_printf ft_printf_faux ft_printunsign
 OBJ =  ${SRC:=.o}
 NAME = libftprintf.a
 LIB = ar rcs
