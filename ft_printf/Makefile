@@ -1,4 +1,5 @@
-SRC = ft_printf ft_printf_faux ft_printunsign
+SRC = ft_printf ft_printf_faux ft_printunsign \
+	ft_printptr ft_printhexa 
 OBJ =  ${SRC:=.o}
 NAME = libftprintf.a
 LIB = ar rcs

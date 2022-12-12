@@ -6,7 +6,7 @@
 /*   By: mscheffe <mscheffe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 14:06:26 by mscheffe          #+#    #+#             */
-/*   Updated: 2022/12/12 12:22:22 by mscheffe         ###   ########.fr       */
+/*   Updated: 2022/12/12 14:35:43 by mscheffe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@ int	ft_format(va_list arg, const char format)
 	else if (format == 'u')
 		len += ft_printunsign(va_arg(arg, unsigned int));
 	else if (format == 'X' || format == 'x')
-		len += ft_printhexa(va_arg(arg, char), format);
+		len += ft_printhexa(va_arg(arg, unsigned int), format);
 	else if (format == '%')
 		len += ft_putchar(va_arg(arg, int));
 	return (len);
 }
 
-int	printf(const char *s, ...)
+int	ft_printf(const char *s, ...)
 {
 	int		i;
 	int		len;

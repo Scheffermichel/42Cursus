@@ -6,7 +6,7 @@
 /*   By: mscheffe <mscheffe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 11:31:33 by mscheffe          #+#    #+#             */
-/*   Updated: 2022/12/10 13:11:45 by mscheffe         ###   ########.fr       */
+/*   Updated: 2022/12/12 14:30:30 by mscheffe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,3 @@ int	ft_printnbr(int n)
 	free(num);
 	return (len);
 }
-

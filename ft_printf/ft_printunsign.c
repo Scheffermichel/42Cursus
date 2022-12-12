@@ -6,7 +6,7 @@
 /*   By: mscheffe <mscheffe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 12:43:26 by mscheffe          #+#    #+#             */
-/*   Updated: 2022/12/10 13:12:23 by mscheffe         ###   ########.fr       */
+/*   Updated: 2022/12/12 14:25:23 by mscheffe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_takenum(unsigned int n)
 	return (i);
 }
 
-char	ft_uitoa(unsigned int n)
+char	*ft_uitoa(unsigned int n)
 {
 	int		len;
 	char	*str;
@@ -35,7 +35,7 @@ char	ft_uitoa(unsigned int n)
 	len = ft_takenum(n);
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (str == NULL)
-		return (NULL);
+		return (0);
 	str[len] = '\0';
 	if (n == 0)
 		str[0] = '0';
@@ -56,6 +56,6 @@ int	ft_printunsign(unsigned int n)
 	len = 0;
 	num = ft_uitoa(n);
 	len = ft_printstr(num);
-	free(n);
+	free(num);
 	return (len);
 }
