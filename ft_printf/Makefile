@@ -7,10 +7,12 @@ CC = gcc
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
 
-all: ${NAME}
+all: libft ${NAME}
+
+libft:
+	${MAKE} -C Libft
 
 ${NAME}: ${OBJ}
-	${MAKE} -C Libft
 	${LIB} ${NAME} ${OBJ}
 
 clean:
