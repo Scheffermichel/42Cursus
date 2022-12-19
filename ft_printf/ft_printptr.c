@@ -6,7 +6,7 @@
 /*   By: mscheffe <mscheffe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 11:25:39 by mscheffe          #+#    #+#             */
-/*   Updated: 2022/12/12 14:25:48 by mscheffe         ###   ########.fr       */
+/*   Updated: 2022/12/19 10:42:01 by mscheffe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,13 @@ int	ft_printptr(unsigned long long ptr)
 	int	len;
 
 	len = 0;
-	len += write(1, "0x", 2);
 	if (ptr == 0)
 	{
-		len += write(1, "0", 1);
+		len += write(1, "(nil)", 5);
 	}
 	else
 	{
+		len += write(1, "0x", 2);
 		ft_putptr(ptr);
 		len += ft_ptrlen(ptr);
 	}

@@ -6,13 +6,13 @@
 /*   By: mscheffe <mscheffe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 14:34:03 by mscheffe          #+#    #+#             */
-/*   Updated: 2022/11/26 19:47:55 by mscheffe         ###   ########.fr       */
+/*   Updated: 2022/12/19 10:29:15 by mscheffe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_takenum(int n)
+static int	ft_takenum(long n)
 {
 	int	i;
 
@@ -34,28 +34,28 @@ static int	ft_takenum(int n)
 
 char	*ft_itoa(int n)
 {
-	int		len;
+	long	len;
+	long	nbr;
 	char	*str;
 
+	nbr = (long)n;
 	len = ft_takenum(n);
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
+	str = (char *)malloc(len + 1);
 	if (str == NULL)
 		return (NULL);
 	if (n < 0)
 	{
 		str[0] = '-';
-		n *= -1;
+		nbr *= -1;
 	}
 	str[len] = '\0';
 	if (n == 0)
 		str[0] = '0';
-	while (n != 0)
+	while (nbr != 0)
 	{
 		len--;
-		str[len] = (n % 10) + '0';
-		n = n / 10;
+		str[len] = (nbr % 10) + '0';
+		nbr = nbr / 10;
 	}
 	return (str);
 }

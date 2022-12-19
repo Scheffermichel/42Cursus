@@ -2,17 +2,17 @@ SRC = ft_printf ft_printf_faux ft_printunsign \
 	ft_printptr ft_printhexa 
 OBJ =  ${SRC:=.o}
 NAME = libftprintf.a
+INCLUDE = Libft/libft.h
 LIB = ar rcs
 CC = gcc
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
 
-all: libft ${NAME}
-
-libft:
-	${MAKE} -C Libft
+all: ${NAME}
 
 ${NAME}: ${OBJ}
+	${MAKE} -C Libft
+	cp Libft/libft.a ${NAME}
 	${LIB} ${NAME} ${OBJ}
 
 clean:

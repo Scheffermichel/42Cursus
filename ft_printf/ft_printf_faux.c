@@ -6,7 +6,7 @@
 /*   By: mscheffe <mscheffe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 11:31:33 by mscheffe          #+#    #+#             */
-/*   Updated: 2022/12/12 14:30:30 by mscheffe         ###   ########.fr       */
+/*   Updated: 2022/12/17 12:36:31 by mscheffe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 int	ft_putchar(int c)
 {
-	if (c == '%')
-		write(1, &c, 1);
-	else
-		write(1, &c, 1);
+	write(1, &c, 1);
 	return (1);
 }
 
@@ -49,4 +46,10 @@ int	ft_printnbr(int n)
 	len = ft_printstr(num);
 	free(num);
 	return (len);
+}
+
+int	ft_printpercent(void)
+{
+	write(1, "%", 1);
+	return (1);
 }

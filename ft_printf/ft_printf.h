@@ -6,7 +6,7 @@
 /*   By: mscheffe <mscheffe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 15:50:57 by mscheffe          #+#    #+#             */
-/*   Updated: 2022/12/12 14:49:00 by mscheffe         ###   ########.fr       */
+/*   Updated: 2022/12/17 12:36:56 by mscheffe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int		ft_printptr(unsigned long long ptr);
 int		ft_printhexa(unsigned int n, const char format);
 int		ft_ptrlen(uintptr_t n);
 int		ft_takenum(unsigned int n);
+int		ft_printpercent(void);
 char	*ft_uitoa(unsigned int n);
 void	ft_puthex(unsigned int n, const char format);
 void	ft_putptr(uintptr_t n);
