@@ -1,5 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mscheffe <mscheffe@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/22 15:57:55 by mscheffe          #+#    #+#             */
+/*   Updated: 2023/02/22 18:35:56 by mscheffe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 #include <unistd.h>
+#include <stdio.h>
+#include <fcntl.h>
 
 char	*ft_read_leftline(int fd, char *leftline)
 {
@@ -13,43 +27,16 @@ char	*ft_read_leftline(int fd, char *leftline)
 	while (!ft_strchr(leftline, '\n') && bytes != 0)
 	{
 		bytes = read(fd, buff, BUFFER_SIZE);
-		if (read == -1)
+		if (bytes == -1)
 		{
 			free(buff);
-			return NULL;
+			return (NULL);
 		}
 		buff[bytes] = '\0';
-		leftline = strjoin(leftline, buff);
+		leftline = ft_strjoin(leftline, buff);
 	}
 	free(buff);
 	return (leftline);
-}
-
-char	*ft_getline(char *leftline)
-{
-	int		i;
-	char	*str;
-
-	i = 0;
-	if (leftline[i] == NULL)
-		return (NULL);
-	while (leftline[i] && (leftline[i] != '\n'))
-		i++;
-	str = (char *)malloc(sizeof(char) * (i + 2));
-	if (str == NULL)
-		return (NULL);
-	while (leftline[i] && (leftline[i] != '\n'))
-	{
-		str[i] = leftline[i];
-		i++;
-	}
-	if (leftline[i] == '\n')
-	{
-		str[i] = leftline[i];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
 }
 
 char	*get_next_line(int fd)
@@ -67,5 +54,21 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
+/*int	main(void)
+{
+	char	*line;
+	int		i;
+	int		fd1;
 
-
+	fd1 = open("tests/test.txt", O_RDONLY);
+	i = 1;
+	while (i < 7)
+	{
+		line = get_next_line(fd1);
+		printf("line [%d]: %s", i, line);
+		free(line);
+		i++;
+	}
+	close(fd1);
+	return (0);
+}*/
