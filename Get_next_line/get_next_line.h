@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mscheffe <mscheffe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: scheffermichel <scheffermichel@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 15:58:45 by mscheffe          #+#    #+#             */
-/*   Updated: 2023/02/22 16:45:48 by mscheffe         ###   ########.fr       */
+/*   Updated: 2023/02/23 22:22:45 by scheffermic      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 5
+#  define BUFFER_SIZE 3
 # endif
 
 char	*get_next_line(int fd);

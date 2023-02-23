@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mscheffe <mscheffe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: scheffermichel <scheffermichel@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 15:57:55 by mscheffe          #+#    #+#             */
-/*   Updated: 2023/02/22 18:35:56 by mscheffe         ###   ########.fr       */
+/*   Updated: 2023/02/23 22:39:37 by scheffermic      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_read_leftline(int fd, char *leftline)
 	int		bytes;
 
 	buff = malloc((BUFFER_SIZE + 1) * sizeof(char));
-	if (buff == NULL)
+	if (!buff)
 		return (NULL);
 	bytes = 1;
 	while (!ft_strchr(leftline, '\n') && bytes != 0)
@@ -44,7 +44,7 @@ char	*get_next_line(int fd)
 	char			*line;
 	static char		*leftline;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE < 1)
 		return (0);
 	leftline = ft_read_leftline(fd, leftline);
 	if (!leftline)
@@ -54,21 +54,21 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-/*int	main(void)
+int	main(void)
 {
 	char	*line;
 	int		i;
 	int		fd1;
 
-	fd1 = open("tests/test.txt", O_RDONLY);
+	fd1 = open("test/test2.txt", O_RDONLY);
 	i = 1;
-	while (i < 7)
+	while (i < 9)
 	{
 		line = get_next_line(fd1);
-		printf("line [%d]: %s", i, line);
+		printf("line [%02d]: %s\n", i, line);
 		free(line);
 		i++;
 	}
 	close(fd1);
 	return (0);
-}*/
+}
