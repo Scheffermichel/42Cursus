@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scheffermichel <scheffermichel@student.    +#+  +:+       +#+        */
+/*   By: mscheffe <mscheffe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 15:58:45 by mscheffe          #+#    #+#             */
-/*   Updated: 2023/02/23 22:22:45 by scheffermic      ###   ########.fr       */
+/*   Updated: 2023/02/24 21:32:08 by mscheffe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 # include <stdlib.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 3
+#  define BUFFER_SIZE 5
 # endif
 
 char	*get_next_line(int fd);
-char	*ft_read_leftline(int fd, char *leftline);
-char	*ft_getline(char *leftline);
+char	*ft_read_line(int fd, char *leftline);
+char	*ft_get_line(char *leftline);
 char	*ft_strchr(char *s, int c);
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_getremain(char *leftline);

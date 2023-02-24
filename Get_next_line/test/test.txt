@@ -1,7 +1,7 @@
-start
-- dame da ne
-- dame yo dame na no yo
-- anta ga suki de sukisugite
-- dore dake tsuyoi osake demo
-- yugamanai omoide ga baka mitai
-end
+Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit. 
+Ut nec est vulputate, aliquet mauris eget, 
+finibus erat. 
+
+
+Maecenas lacinia ut tellus sed finibus. 

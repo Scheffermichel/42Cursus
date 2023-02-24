@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scheffermichel <scheffermichel@student.    +#+  +:+       +#+        */
+/*   By: mscheffe <mscheffe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 15:55:25 by mscheffe          #+#    #+#             */
-/*   Updated: 2023/02/23 22:35:38 by scheffermic      ###   ########.fr       */
+/*   Updated: 2023/02/24 21:37:05 by mscheffe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,34 +70,6 @@ char	*ft_strjoin(char *line, char *buff)
 	return (str);
 }
 
-char	*ft_getline(char *str)
-{
-	int		i;
-	char	*line;
-
-	i = 0;
-	if (!str[i])
-		return (NULL);
-	while (str[i] && (str[i] != '\n'))
-		i++;
-	line = (char *)malloc(sizeof(char) * (i + 2));
-	if (!line)
-		return (NULL);
-	i = 0;	
-	while (str[i] && str[i] != '\n')
-	{
-		line[i] = str[i];
-		i++;
-	}
-	if (str[i] == '\n')
-	{
-		line[i] = str[i];
-		i++;
-	}
-	line[i] = '\0';
-	return (line);
-}
-
 char	*ft_getremain(char *str)
 {
 	int		i;
@@ -107,13 +79,13 @@ char	*ft_getremain(char *str)
 	i = 0;
 	while (str[i] && str[i] != '\n')
 		i++;
-	if (!str[i])
+	if (str[i] == 0)
 	{
 		free(str);
 		return (NULL);
 	}
 	left = (char *)malloc(sizeof(char) * (ft_strlen(str) - i + 1));
-	if (!left)
+	if (left == NULL)
 		return (NULL);
 	i++;
 	j = 0;
