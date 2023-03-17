@@ -3,7 +3,6 @@
 
 #include <unistd.h>
 #include <Libft/libft.h>
-#include <cstdlib.h>
 
 
 typedef struct s_stack
@@ -13,6 +12,12 @@ typedef struct s_stack
 	struct s_stack	*next;
 	struct s_stack 	*prev;
 
-}			t_stack; 
+}					t_stack;
+
+void	ft_error();
+void	ft_free(t_stack **lst);
+t_stack	*ft_fill(int argc, char **argv);
+t_stack	*ft_newstack(int nbr);
+
 
 #endif
