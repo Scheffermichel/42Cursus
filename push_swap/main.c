@@ -13,7 +13,7 @@ t_stack *ft_fill(int argc, char **argv)
 	while (i < argc)
 	{
 		j = ft_atoimod(argv[i]);
-		ft_add_back(&a, ft_newstack(j));
+		ft_addback(&a, ft_newstack(j));
 		i++;
 	}
 	return (a);
@@ -29,8 +29,14 @@ int main(int argc, char **argv)
 		ft_free(&a);
 		ft_error();
 	}
-	if (!ft_sorted(a))
-		ft_sort(&a);
-	ft_free(&a);
-	return (0);
+	ft_ra(&a);
+	while (a != NULL)
+	{
+		printf("%ld\n", a->num);
+		a = a->next;
+	}
+	
+	/*if (!ft_sorted(a))
+		ft_sort(&a);*/
+	//ft_free(&a);
 }

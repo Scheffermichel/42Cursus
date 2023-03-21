@@ -12,7 +12,16 @@ t_stack	*ft_newstack(int nbr)
 	return (new);
 }
 
-void ft_addback(t_stack **stack, t_stack *stack_new)
+t_stack	*ft_lstlast(t_stack *lst)
+{
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
+}
+
+void	ft_addback(t_stack **stack, t_stack *stack_new)
 {
 	if (!stack)
 		return ;
@@ -20,5 +29,4 @@ void ft_addback(t_stack **stack, t_stack *stack_new)
 		*stack = stack_new;
 	else
 		(ft_lstlast(*stack))->next = stack_new;		
-
 }
