@@ -1,5 +1,5 @@
-SRC = checkers ft_buildstack ft_free ft_printerror \
-	ft_utils rules main 
+SRC = checkers checkers2 ft_buildstack ft_free ft_printerror \
+	ft_utils rules rules2 rules3 main 
 OBJ =  ${SRC:=.o}
 NAME = push_swap.a
 INCLUDE = Libft/libft.h

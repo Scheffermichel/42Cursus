@@ -29,14 +29,7 @@ int main(int argc, char **argv)
 		ft_free(&a);
 		ft_error();
 	}
-	ft_ra(&a);
-	while (a != NULL)
-	{
-		printf("%ld\n", a->num);
-		a = a->next;
-	}
-	
-	/*if (!ft_sorted(a))
-		ft_sort(&a);*/
-	//ft_free(&a);
+	if (!check_sort(a))
+		//ft_sort(&a);
+	ft_free(&a);
 }
