@@ -5,7 +5,7 @@ t_stack	*ft_newstack(int nbr)
 	t_stack	*new;
 
 	new = malloc(sizeof(t_stack));
-	if(!new)
+	if (!new)
 		ft_error();
 	new->num = nbr;
 	new->next = NULL;
