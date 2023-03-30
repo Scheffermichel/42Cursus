@@ -13,5 +13,9 @@ int	rarbcase(t_stack *a, t_stack *b, int c)
 int	rrarrbcase(t_stack *a, t_stack *b, int c)
 {
 	int	i;
+
+	if (right_spot_b(b, c))
+		i = ft_lstsize(b) - right_spot_b(b, c);
+	if ()	
 	
 }

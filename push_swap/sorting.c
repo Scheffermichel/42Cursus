@@ -21,3 +21,4 @@ void	ft_sort_three(t_stack **a)
 			ft_sa(a);	
 	}
 }
+
