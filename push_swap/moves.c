@@ -83,6 +83,11 @@ int	ft_do_rarrb(t_stack **a, t_stack **b, int c, char s)
 	}
 	else
 	{
-		
+		while (right_spot_a(*a, c) > 0)
+			ft_ra(a);
+		while ((*b)->num != c)
+			ft_rrb(b);
+		ft_pa(a, b);		
 	}
+	return (-1);
 }
