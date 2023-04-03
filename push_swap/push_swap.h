@@ -45,7 +45,15 @@ int		ft_do_rrarb(t_stack **a, t_stack **b, int c, char s);
 int		ft_do_rarrb(t_stack **a, t_stack **b, int c, char s);
 int		find_index(t_stack *a, int num);
 int		right_spot_b(t_stack *b, int num_push);
-int		right_spot_a(t_stack *a, int num_push)
+int		right_spot_a(t_stack *a, int num_push);
+int		rarbcase(t_stack *a, t_stack *b, int c);
+int		rrarrbcase(t_stack *a, t_stack *b, int c);
+int		rrarbcase(t_stack *a, t_stack *b, int c);
+int		rarrbcase(t_stack *a, t_stack *b, int c);
+int		rarbcase_a(t_stack *a, t_stack *b, int c);
+int 	rrarrbcase_a(t_stack *a, t_stack *b, int c);
+int		rarrbcase_a(t_stack *a, t_stack *b, int c);
+int		rrarbcase_a(t_stack *a, t_stack *b, int c);
 t_stack	*ft_fill(int argc, char **argv);
 t_stack	*ft_newstack(int nbr);
 t_stack	*ft_lstlast(t_stack *lst);
