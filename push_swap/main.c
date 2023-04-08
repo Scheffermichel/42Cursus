@@ -30,6 +30,7 @@ int main(int argc, char **argv)
 		ft_error();
 	}
 	if (!check_sort(a))
-		//ft_sort(&a);
+		do_sort(&a);
 	ft_free(&a);
+	return (0);
 }

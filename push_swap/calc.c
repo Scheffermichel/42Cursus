@@ -28,7 +28,7 @@ int	rrarbcase(t_stack *a, t_stack *b, int c)
 
 	i = 0;
 	if (find_index(a, c))
-		i = ft_lstsize(a) - ft_find_index(a, c);
+		i = ft_lstsize(a) - find_index(a, c);
 	i = right_spot_b(b, c) + i;
 	return (i);	
 }

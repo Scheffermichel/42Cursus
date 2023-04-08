@@ -1,7 +1,7 @@
 SRC = checkers checkers2 ft_buildstack ft_free ft_printerror \
 	ft_utils lst_utils rules rules2 rules3 \
-	stack_utils sorting moves calculations main \
-	calc calc2
+	stack_utils moves calc calc2 main \
+	rotate sort_three sort 
 OBJ =  ${SRC:=.o}
 NAME = push_swap.a
 INCLUDE = Libft/libft.h
@@ -23,8 +23,4 @@ fclean: clean
 
 re: fclean all
 
-norm:
-	norminette -R CheckForbiddenSourceHeader *.c
-	norminette -R CheckDefine *.h
-
-.PHONY: all re clean fclean norm
+.PHONY: all re clean fclean 
